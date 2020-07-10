@@ -1,0 +1,54 @@
+github 属于一个类似云盘的东西 gitee（码云）中文版 tf1002
+1. 先进行git的配置 打开cmd
+    git config --list 全局检查本地git的配置
+    需要配置得两个内容
+    1、使用人员的名称（英文）
+        git config --global user.name "英文名字"
+    2、使用人员的邮箱 （常用的邮箱）
+        git config --global user.email "邮箱"
+2. 开始格式化当前文件
+    git init     会新增一个.git的隐藏文件
+    存储了项目文件夹的相关信息以及操作的时间节点（操作记录等信息）
+    生成3个区域 --》工作区  缓存区（不能被编辑和操作） 历史区（形成的历史版本）
+    使用步骤 在工作区编辑程序--》上传到缓存区--》将缓存区的文件上传到历史区，形成历史版本
+    工作区不能直接上传到历史区，但是可以直接在历史下载        
+    
+3. 具体操作命令 clear -- 清屏
+    1、 格式化项目文件夹 
+        git init
+    2、 查看当前缓存区的内容
+        git status
+        上传文件到缓存区
+        git add 文件名
+        上传文件夹到缓存区（文件夹必须有内容）
+        git add 文件夹名
+        上传所有的文件到缓存区
+        git add --all / git add .
+        从缓存区拿到（回滚）工作区
+            回滚一个文件 git reset HEAD -- 文件名
+            回滚一个文件夹 git reset HEAD --文件夹名
+            回滚所有 git reset HEAD --.
+    3、缓存区上传到历史区
+        上传缓存区的内容
+        git commit -m "本次操作的说明" （上传后缓存区没有文件）
+        查看历史版本
+        git log
+            commit -- 当前版本的ID 每个历史版本都是自己单独的ID 根据ID进行查找版本 40位16进制
+            Author -- 上传人员的信息 
+            Date -- 生成历史版本的时间
+                注释内容 
+        执行历史版本的回滚
+        git reset --hard id
+    4、与gitHub的仓库进行连接
+        git remote add origin 网址
+        在.git中 config 可以修改配置
+        上传 （master是主分支）
+        git push -u origin master
+        克隆仓库中的内容
+        git clone 仓库地址
+
+        
+
+
+
+
